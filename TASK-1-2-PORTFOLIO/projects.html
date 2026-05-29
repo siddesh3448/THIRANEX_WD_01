@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <!-- Primary SEO Meta Tags -->
+    <title>Responsive Web Projects | Siddesh Mange Portfolio</title>
+    <meta name="description" content="Explore the portfolio of Siddesh Mange, a Web Development Intern. Featuring practice projects built with semantic HTML5 structures, CSS Grid, and basic web accessibility standards.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#ffffff">
+ 
+    <!-- Canonical: absolute URL -->
+    <link rel="canonical" href="https://siddesh3448.github.io/projects.html">
+ 
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://siddesh3448.github.io/projects.html">
+    <meta property="og:title" content="Responsive Web Projects | Siddesh Mange Portfolio">
+    <meta property="og:description" content="Explore Siddesh Mange's personal projects built during his web development internship, showcasing clean layouts and accessible guidelines.">
+    <meta property="og:image" content="https://siddesh3448.github.io/images/og-share-projects.webp">
+ 
+    <!-- Twitter Card: corrected to twitter:image (was og:image) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Responsive Web Projects | Siddesh Mange Portfolio">
+    <meta name="twitter:description" content="Explore Siddesh Mange's personal projects built during his web development internship, showcasing clean layouts and accessible guidelines.">
+    <meta name="twitter:image" content="https://siddesh3448.github.io/images/og-share-projects.webp">
+ 
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="css/variables.css" as="style">
+    <link rel="preload" href="css/style.css" as="style">
+ 
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+ 
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Projects by Siddesh Mange",
+      "url": "https://siddesh3448.github.io/projects.html",
+      "description": "A curated catalog of coding projects and practice assignments by Siddesh Mange, Web Development Intern.",
+      "author": {
+        "@type": "Person",
+        "name": "Siddesh Mange",
+        "url": "https://siddesh3448.github.io"
+      }
+    }
+    </script>
+</head>
+<body>
+ 
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+ 
+    <!-- Global Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" aria-label="Siddesh Mange Home">
+                    <span class="logo-text" aria-hidden="true">&lt;SM/&gt;</span>
+                    <span class="sr-only">Siddesh Mange Logo</span>
+                </a>
+            </div>
+ 
+            <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle Navigation Menu">
+                <span class="hamburger-box" aria-hidden="true">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+ 
+            <nav id="primary-nav" class="primary-nav" aria-label="Primary Navigation">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="projects.html" class="nav-link" aria-current="page">Projects</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+ 
+    <!-- Main Content Area -->
+    <main id="main-content">
+ 
+        <!-- Projects Introduction Section -->
+        <section class="projects-intro-section" aria-labelledby="projects-main-heading">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-category">Portfolio</span>
+                    <h1 id="projects-main-heading" class="section-title">My Creations &amp; Practice Work</h1>
+                    <p class="section-subtitle">
+                        A curated catalog of coding projects and homework sheets constructed while building my frontend developer toolkit.
+                    </p>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- Project Filtering Section -->
+        <section class="filters-section" aria-labelledby="filters-heading">
+            <div class="section-container">
+                <h2 id="filters-heading" class="sr-only">Filter Projects</h2>
+ 
+                <div class="filter-controls-wrapper">
+                    <span class="filter-label" id="filter-group-label">Show categories:</span>
+                    <div class="filter-btn-group" role="group" aria-labelledby="filter-group-label">
+                        <button type="button" class="filter-btn active" aria-pressed="true" data-filter="all">All Work</button>
+                        <button type="button" class="filter-btn" aria-pressed="false" data-filter="internship">Internship Scope</button>
+                        <button type="button" class="filter-btn" aria-pressed="false" data-filter="accessibility">A11y Learning</button>
+                        <button type="button" class="filter-btn" aria-pressed="false" data-filter="applications">Web Apps</button>
+                    </div>
+                </div>
+ 
+                <div id="filter-announcer" class="sr-only" aria-live="polite" aria-atomic="true">
+                    Showing all 4 projects.
+                </div>
+            </div>
+        </section>
+ 
+        <!-- Projects Grid Section -->
+        <section class="projects-grid-section" aria-labelledby="projects-list-heading">
+            <div class="section-container">
+                <h2 id="projects-list-heading" class="sr-only">Projects List</h2>
+ 
+                <div class="projects-display-grid" id="projects-list-container">
+ 
+                    <!-- Project 1 -->
+                    <article class="project-showcase-card" data-category="internship accessibility" aria-labelledby="proj1-heading">
+                        <div class="project-showcase-content">
+                            <header class="project-showcase-header">
+                                <span class="project-meta-category">Internship Project</span>
+                                <h3 id="proj1-heading" class="project-showcase-title">HTML5 Semantic Structure &amp; Accessibility</h3>
+                                <ul class="project-showcase-tags" aria-label="Technologies used for HTML5 Semantic Structure and Accessibility project">
+                                    <li>HTML5</li>
+                                    <li>CSS Variables</li>
+                                    <li>WAI-ARIA</li>
+                                    <li>SEO Meta</li>
+                                </ul>
+                            </header>
+                            <p class="project-showcase-desc">
+                                My main internship assignment: a multi-page personal portfolio website designed from the ground up for strict semantic compliance, clean keyboard navigation, and structural SEO.
+                            </p>
+                            <footer class="project-showcase-footer">
+                                <a href="https://github.com/siddesh3448" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" aria-label="Source code for HTML5 Semantic Structure project on GitHub (opens in new tab)">
+                                    Source Code
+                                </a>
+                            </footer>
+                        </div>
+                    </article>
+ 
+                    <!-- Project 2 -->
+                    <article class="project-showcase-card" data-category="accessibility" aria-labelledby="proj2-heading">
+                        <div class="project-showcase-content">
+                            <header class="project-showcase-header">
+                                <span class="project-meta-category">Practice Mockup</span>
+                                <h3 id="proj2-heading" class="project-showcase-title">Accessible E-Commerce Mockup</h3>
+                                <ul class="project-showcase-tags" aria-label="Technologies used for Accessible E-Commerce Mockup">
+                                    <li>HTML5</li>
+                                    <li>Flexbox</li>
+                                    <li>Custom Outline</li>
+                                    <li>Contrast</li>
+                                </ul>
+                            </header>
+                            <p class="project-showcase-desc">
+                                A practice product landing page designed to explore visual contrast standards, explicit label associations, and keyboard-focused interactive controls.
+                            </p>
+                            <footer class="project-showcase-footer">
+                                <a href="https://github.com/siddesh3448" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" aria-label="Source code for Accessible E-Commerce Mockup on GitHub (opens in new tab)">
+                                    Source Code
+                                </a>
+                            </footer>
+                        </div>
+                    </article>
+ 
+                    <!-- Project 3 -->
+                    <article class="project-showcase-card" data-category="applications" aria-labelledby="proj3-heading">
+                        <div class="project-showcase-content">
+                            <header class="project-showcase-header">
+                                <span class="project-meta-category">Practice App</span>
+                                <h3 id="proj3-heading" class="project-showcase-title">Responsive Recipe Search App</h3>
+                                <ul class="project-showcase-tags" aria-label="Technologies used for Responsive Recipe Search App">
+                                    <li>JavaScript</li>
+                                    <li>Fetch API</li>
+                                    <li>Flexbox Grid</li>
+                                    <li>CSS Variables</li>
+                                </ul>
+                            </header>
+                            <p class="project-showcase-desc">
+                                A client-side recipe catalog querying an external meal API. Built to practice dynamic grid layouts, async coding patterns, and card typography alignment.
+                            </p>
+                            <footer class="project-showcase-footer">
+                                <a href="https://github.com/siddesh3448" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" aria-label="Source code for Responsive Recipe Search App on GitHub (opens in new tab)">
+                                    Source Code
+                                </a>
+                            </footer>
+                        </div>
+                    </article>
+ 
+                    <!-- Project 4 -->
+                    <article class="project-showcase-card" data-category="applications accessibility" aria-labelledby="proj4-heading">
+                        <div class="project-showcase-content">
+                            <header class="project-showcase-header">
+                                <span class="project-meta-category">Classwork Assignment</span>
+                                <h3 id="proj4-heading" class="project-showcase-title">Personal Task Manager Layout</h3>
+                                <ul class="project-showcase-tags" aria-label="Technologies used for Personal Task Manager Layout">
+                                    <li>HTML5</li>
+                                    <li>CSS Grid</li>
+                                    <li>A11y Outlines</li>
+                                    <li>Clean Code</li>
+                                </ul>
+                            </header>
+                            <p class="project-showcase-desc">
+                                A simple dashboard for logging daily study tasks. Features responsive media breakpoints, explicit form input elements, and highly legible visual container guidelines.
+                            </p>
+                            <footer class="project-showcase-footer">
+                                <a href="https://github.com/siddesh3448" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" aria-label="Source code for Personal Task Manager Layout on GitHub (opens in new tab)">
+                                    Source Code
+                                </a>
+                            </footer>
+                        </div>
+                    </article>
+ 
+                </div>
+            </div>
+        </section>
+ 
+    </main>
+ 
+    <!-- Global Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+ 
+                <section class="footer-brand-section" aria-label="Portfolio Owner Summary">
+                    <div class="footer-logo" aria-hidden="true">&lt;SM/&gt;</div>
+                    <p class="footer-tagline">Making the web accessible, one semantic tag at a time.</p>
+                </section>
+ 
+                <nav class="footer-links-section" aria-label="Footer Quick Links">
+                    <h2 class="footer-section-title">Navigation</h2>
+                    <ul class="footer-link-list">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About Me</a></li>
+                        <li><a href="projects.html" class="footer-link" aria-current="page">My Projects</a></li>
+                        <li><a href="contact.html" class="footer-link">Get In Touch</a></li>
+                    </ul>
+                </nav>
+ 
+                <section class="footer-socials-section" aria-label="Social Profiles">
+                    <h2 class="footer-section-title">Connect</h2>
+                    <ul class="footer-social-list">
+                        <li>
+                            <a href="https://github.com/siddesh3448" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile (opens in new tab)">
+                                <span class="social-icon" aria-hidden="true">GitHub</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/siddesh-mallinath-mange-a44689351/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile (opens in new tab)">
+                                <span class="social-icon" aria-hidden="true">LinkedIn</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+ 
+            </div>
+ 
+            <div class="footer-meta">
+                <p class="copyright">&copy; <time datetime="2026">2026</time> Siddesh Mange. Designed and engineered following WCAG accessibility guidelines.</p>
+                <div class="back-to-top-wrapper">
+                    <a href="#main-content" class="back-to-top-btn" aria-label="Back to Top of Page">
+                        <span aria-hidden="true">↑</span> Back to Top
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+ 
+    <script src="js/main.js" defer></script>
+</body>
+</html>

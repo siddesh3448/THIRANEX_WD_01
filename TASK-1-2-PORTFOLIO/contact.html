@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <!-- Primary SEO Meta Tags -->
+    <title>Contact Siddesh Mange | Web Development Intern</title>
+    <meta name="description" content="Get in touch with Siddesh Mange to discuss frontend web development collaborations, internship learning goals, responsive layouts, or junior opportunities.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#ffffff">
+ 
+    <!-- Canonical: absolute URL -->
+    <link rel="canonical" href="https://siddesh3448.github.io/contact.html">
+ 
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://siddesh3448.github.io/contact.html">
+    <meta property="og:title" content="Contact Siddesh Mange | Web Development Intern">
+    <meta property="og:description" content="Reach out to discuss modern semantic coding, clean responsive styles, and web accessibility principles. Let's learn together.">
+    <meta property="og:image" content="https://siddesh3448.github.io/images/og-share-contact.webp">
+ 
+    <!-- Twitter Card: corrected to twitter:image (was og:image) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Siddesh Mange | Web Development Intern">
+    <meta name="twitter:description" content="Reach out to discuss modern semantic coding, clean responsive styles, and web accessibility principles. Let's learn together.">
+    <meta name="twitter:image" content="https://siddesh3448.github.io/images/og-share-contact.webp">
+ 
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="css/variables.css" as="style">
+    <link rel="preload" href="css/style.css" as="style">
+ 
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+ 
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact Siddesh Mange",
+      "url": "https://siddesh3448.github.io/contact.html",
+      "description": "Contact page for Siddesh Mange, Web Development Intern.",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Siddesh Mange",
+        "email": "siddesh3448@gmail.com",
+        "url": "https://siddesh3448.github.io"
+      }
+    }
+    </script>
+</head>
+<body>
+ 
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+ 
+    <!-- Global Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" aria-label="Siddesh Mange Home">
+                    <span class="logo-text" aria-hidden="true">&lt;SM/&gt;</span>
+                    <span class="sr-only">Siddesh Mange Logo</span>
+                </a>
+            </div>
+ 
+            <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle Navigation Menu">
+                <span class="hamburger-box" aria-hidden="true">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+ 
+            <nav id="primary-nav" class="primary-nav" aria-label="Primary Navigation">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link" aria-current="page">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+ 
+    <!-- Main Content Area -->
+    <main id="main-content">
+ 
+        <!-- Contact Intro Section -->
+        <section class="contact-intro-section" aria-labelledby="contact-main-heading">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-category">Get In Touch</span>
+                    <h1 id="contact-main-heading" class="section-title">Let's Connect</h1>
+                    <p class="section-subtitle">
+                        Have a collaborative student project, a frontend remediation task, or an internship question in mind? Fill out the form below or reach out directly.
+                    </p>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- Main Form & Direct Info Grid -->
+        <section class="contact-content-section" aria-labelledby="contact-methods-heading">
+            <div class="section-container">
+                <h2 id="contact-methods-heading" class="sr-only">Contact Methods</h2>
+                <div class="contact-grid">
+ 
+                    <!-- Accessible Contact Form -->
+                    <div class="form-wrapper">
+                        <!--
+                            novalidate: lets us use custom accessible live validation
+                            instead of browser-native popups that cannot be styled or
+                            made screen-reader friendly.
+                        -->
+                        <form action="#" method="POST" id="contact-form" class="contact-form" novalidate aria-label="Contact inquiry form">
+ 
+                            <fieldset class="form-fieldset">
+                                <legend class="form-legend">Send a Secure Inquiry</legend>
+ 
+                                <!-- Live error summary for screen readers on submit -->
+                                <div id="form-error-summary" class="form-summary-alert sr-only" role="alert" aria-live="assertive" tabindex="-1"></div>
+ 
+                                <!-- Name -->
+                                <div class="form-group">
+                                    <label for="contact-name" class="form-label">
+                                        Full Name <span class="required-indicator" aria-hidden="true">*</span>
+                                        <span class="sr-only">(required)</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="contact-name"
+                                        name="name"
+                                        class="form-input"
+                                        required
+                                        autocomplete="name"
+                                        aria-required="true"
+                                        aria-describedby="name-error"
+                                    >
+                                    <span class="field-error" id="name-error" role="alert" aria-live="polite"></span>
+                                </div>
+ 
+                                <!-- Email -->
+                                <div class="form-group">
+                                    <label for="contact-email" class="form-label">
+                                        Email Address <span class="required-indicator" aria-hidden="true">*</span>
+                                        <span class="sr-only">(required)</span>
+                                    </label>
+                                    <input
+                                        type="email"
+                                        id="contact-email"
+                                        name="email"
+                                        class="form-input"
+                                        required
+                                        autocomplete="email"
+                                        aria-required="true"
+                                        aria-describedby="email-error"
+                                    >
+                                    <span class="field-error" id="email-error" role="alert" aria-live="polite"></span>
+                                </div>
+ 
+                                <!-- Subject -->
+                                <div class="form-group">
+                                    <label for="contact-subject" class="form-label">
+                                        Subject / Topic <span class="required-indicator" aria-hidden="true">*</span>
+                                        <span class="sr-only">(required)</span>
+                                    </label>
+                                    <select
+                                        id="contact-subject"
+                                        name="subject"
+                                        class="form-select"
+                                        required
+                                        aria-required="true"
+                                        aria-describedby="subject-error"
+                                    >
+                                        <option value="" disabled selected>Select inquiry category</option>
+                                        <option value="audit">Accessibility Learning / Reviews</option>
+                                        <option value="frontend">Frontend Collaboration Mockups</option>
+                                        <option value="internship">Internship Program Inquiries</option>
+                                        <option value="other">General Message</option>
+                                    </select>
+                                    <span class="field-error" id="subject-error" role="alert" aria-live="polite"></span>
+                                </div>
+ 
+                                <!-- Message -->
+                                <div class="form-group">
+                                    <label for="contact-message" class="form-label">
+                                        Message Details <span class="required-indicator" aria-hidden="true">*</span>
+                                        <span class="sr-only">(required)</span>
+                                    </label>
+                                    <textarea
+                                        id="contact-message"
+                                        name="message"
+                                        class="form-textarea"
+                                        rows="6"
+                                        required
+                                        minlength="10"
+                                        aria-required="true"
+                                        aria-describedby="message-error"
+                                    ></textarea>
+                                    <span class="field-error" id="message-error" role="alert" aria-live="polite"></span>
+                                </div>
+ 
+                                <div class="form-actions">
+                                    <button type="submit" id="submit-btn" class="btn btn-primary">
+                                        Submit Message
+                                    </button>
+                                </div>
+ 
+                            </fieldset>
+                        </form>
+                    </div>
+ 
+                    <!-- Direct Contact Details -->
+                    <div class="direct-contact-wrapper">
+                        <section class="direct-contact-card" aria-labelledby="direct-info-heading">
+                            <h2 id="direct-info-heading" class="direct-info-title">Contact Channels</h2>
+                            <p class="direct-info-subtitle">Prefer direct messaging? Reach out via these channels:</p>
+ 
+                            <address class="direct-address">
+                                <ul class="direct-channels-list">
+                                    <li>
+                                        <span class="channel-label">Direct Email:</span>
+                                        <a href="mailto:siddesh3448@gmail.com" class="channel-link">siddesh3448@gmail.com</a>
+                                    </li>
+                                    <li>
+                                        <span class="channel-label">Location Base:</span>
+                                        <span class="channel-value">Boston, MA (Remote Coordination)</span>
+                                    </li>
+                                </ul>
+                            </address>
+                        </section>
+ 
+                        <section class="direct-contact-card" aria-labelledby="response-heading">
+                            <h3 id="response-heading" class="direct-info-title">Standard Response Service</h3>
+                            <p>
+                                I verify correspondence daily. Response turnaround times are generally <strong>within 24 business hours</strong>.
+                            </p>
+                        </section>
+                    </div>
+ 
+                </div>
+            </div>
+        </section>
+ 
+    </main>
+ 
+    <!-- Global Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+ 
+                <section class="footer-brand-section" aria-label="Portfolio Owner Summary">
+                    <div class="footer-logo" aria-hidden="true">&lt;SM/&gt;</div>
+                    <p class="footer-tagline">Making the web accessible, one semantic tag at a time.</p>
+                </section>
+ 
+                <nav class="footer-links-section" aria-label="Footer Quick Links">
+                    <h2 class="footer-section-title">Navigation</h2>
+                    <ul class="footer-link-list">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About Me</a></li>
+                        <li><a href="projects.html" class="footer-link">My Projects</a></li>
+                        <li><a href="contact.html" class="footer-link" aria-current="page">Get In Touch</a></li>
+                    </ul>
+                </nav>
+ 
+                <section class="footer-socials-section" aria-label="Social Profiles">
+                    <h2 class="footer-section-title">Connect</h2>
+                    <ul class="footer-social-list">
+                        <li>
+                            <a href="https://github.com/siddesh3448" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile (opens in new tab)">
+                                <span class="social-icon" aria-hidden="true">GitHub</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/siddesh-mallinath-mange-a44689351/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile (opens in new tab)">
+                                <span class="social-icon" aria-hidden="true">LinkedIn</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+ 
+            </div>
+ 
+            <div class="footer-meta">
+                <p class="copyright">&copy; <time datetime="2026">2026</time> Siddesh Mange. Designed and engineered following WCAG accessibility guidelines.</p>
+                <div class="back-to-top-wrapper">
+                    <a href="#main-content" class="back-to-top-btn" aria-label="Back to Top of Page">
+                        <span aria-hidden="true">↑</span> Back to Top
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+ 
+    <script src="js/main.js" defer></script>
+</body>
+</html>
