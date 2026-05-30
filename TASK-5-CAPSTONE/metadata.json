@@ -1,0 +1,6 @@
+{
+  "name": "E-Commerce Product Catalog",
+  "description": "A professional and elegant product catalog with a responsive design, dynamic routes, and localStorage cart persistence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
