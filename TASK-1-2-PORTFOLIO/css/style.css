@@ -189,8 +189,8 @@ main {
 .projects-grid,
 .projects-display-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--space-lg);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-xl);
     margin-top: var(--space-xl);
 }
  
@@ -355,8 +355,10 @@ main {
 }
  
 .hero-content {
-    max-width: 800px;
+    max-width: var(--container-xl);
     margin: 0 auto;
+    display: grid;
+    gap: var(--space-xl);
 }
  
 .hero-intro {
@@ -416,8 +418,8 @@ main {
 }
  
 .expertise-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
 }
  
 .expertise-icon {
@@ -459,8 +461,8 @@ main {
  
 .project-card:hover,
 .project-showcase-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
 }
  
 .project-card-content,
@@ -1154,7 +1156,6 @@ main {
     align-items: center;
     gap: var(--space-xs);
     /* FIX (Performance): smooth scroll only for this purposeful navigation action */
-    scroll-behavior: smooth;
 }
  
 .back-to-top-btn:hover,
@@ -1162,4 +1163,9 @@ main {
     background-color: hsl(220, 20%, 30%);
     text-decoration: none;
     color: var(--clr-surface);
+}
+section {
+    transition:
+        background-color var(--transition-normal),
+        color var(--transition-normal);
 }

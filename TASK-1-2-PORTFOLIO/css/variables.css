@@ -6,115 +6,134 @@
  * Calibrated for accessible keyboard indicators, layered structures,
  * and responsive typography across viewports.
  */
- 
+
 :root {
-    /* ==========================================================================
+   /* ==========================================================================
        1. Color Tokens (HSL Palette)
        ========================================================================== */
- 
-    --clr-bg: hsl(220, 20%, 97%);
-    --clr-surface: hsl(0, 0%, 100%);
- 
-    --clr-primary: hsl(224, 76%, 36%);
-    --clr-primary-hover: hsl(224, 76%, 26%);
-    --clr-primary-light: hsl(224, 80%, 94%);
- 
-    --clr-accent: hsl(150, 75%, 26%);
-    --clr-accent-hover: hsl(150, 75%, 16%);
-    --clr-accent-light: hsl(150, 70%, 93%);
- 
-    --clr-text-primary: hsl(224, 60%, 12%);
-    --clr-text-body: hsl(224, 20%, 22%);
-    --clr-text-muted: hsl(224, 12%, 42%);
- 
-    --clr-error: hsl(355, 78%, 42%);
-    --clr-error-light: hsl(355, 80%, 95%);
-    --clr-success: hsl(140, 70%, 35%);
-    --clr-success-light: hsl(140, 70%, 94%);
- 
-    --clr-border: hsl(224, 15%, 85%);
-    --clr-border-focus: hsl(224, 76%, 36%);
- 
-    /* Keyboard Outline Indicator */
-    --focus-ring: 3px solid var(--clr-primary);
- 
-    /* ==========================================================================
+
+   --clr-bg: hsl(220, 20%, 97%);
+   --clr-surface: hsl(0, 0%, 100%);
+
+   --clr-primary: hsl(224, 76%, 36%);
+   --clr-primary-hover: hsl(224, 76%, 26%);
+   --clr-primary-light: hsl(224, 80%, 94%);
+
+   --clr-accent: hsl(150, 75%, 26%);
+   --clr-accent-hover: hsl(150, 75%, 16%);
+   --clr-accent-light: hsl(150, 70%, 93%);
+
+   --clr-text-primary: hsl(224, 60%, 12%);
+   --clr-text-body: hsl(224, 20%, 22%);
+   --clr-text-muted: hsl(224, 12%, 42%);
+
+   --clr-error: hsl(355, 78%, 42%);
+   --clr-error-light: hsl(355, 80%, 95%);
+   --clr-success: hsl(140, 70%, 35%);
+   --clr-success-light: hsl(140, 70%, 94%);
+
+   --clr-border: hsl(224, 15%, 85%);
+   --clr-border-focus: hsl(224, 76%, 36%);
+
+   /* Keyboard Outline Indicator */
+   --focus-ring: 3px solid var(--clr-primary);
+
+   /* ==========================================================================
        2. Typography Scales
        ========================================================================== */
- 
-    --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
- 
-    --fs-xs: 0.75rem;
-    --fs-sm: 0.875rem;
-    --fs-base: 1rem;
-    --fs-md: 1.125rem;
-    --fs-lg: 1.25rem;
-    --fs-xl: 1.5rem;
-    --fs-2xl: 2rem;
-    --fs-3xl: 2.75rem;
- 
-    --fw-regular: 400;
-    --fw-medium: 500;
-    --fw-semibold: 600;
-    --fw-bold: 700;
- 
-    --lh-tight: 1.2;
-    --lh-heading: 1.35;
-    --lh-base: 1.6;
- 
-    --tracking-tight: -0.02em;
-    --tracking-normal: 0em;
-    --tracking-wide: 0.02em;
-    --tracking-widest: 0.1em;
- 
-    /* ==========================================================================
+
+   --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+
+   --fs-xs: 0.75rem;
+   --fs-sm: 0.875rem;
+   --fs-base: 1rem;
+   --fs-md: 1.125rem;
+   --fs-lg: 1.25rem;
+   --fs-xl: clamp(1.25rem, 1rem + 1vw, 1.5rem);
+   --fs-2xl: clamp(1.75rem, 1.25rem + 1.5vw, 2.25rem);
+   --fs-3xl: clamp(2.25rem, 1.75rem + 2vw, 3.25rem);
+
+   --fw-regular: 400;
+   --fw-medium: 500;
+   --fw-semibold: 600;
+   --fw-bold: 700;
+
+   --lh-tight: 1.2;
+   --lh-heading: 1.35;
+   --lh-base: 1.6;
+
+   --tracking-tight: -0.02em;
+   --tracking-normal: 0em;
+   --tracking-wide: 0.02em;
+   --tracking-widest: 0.1em;
+
+   /* ==========================================================================
        3. Spacing System
        ========================================================================== */
- 
-    --space-2xs: 0.25rem;
-    --space-xs: 0.5rem;
-    --space-sm: 0.75rem;
-    --space-md: 1rem;
-    --space-lg: 1.5rem;
-    --space-xl: 2rem;
-    --space-2xl: 3rem;
-    --space-3xl: 4.5rem;
- 
-    /* ==========================================================================
+
+   --space-2xs: 0.25rem;
+   --space-xs: 0.5rem;
+   --space-sm: 0.75rem;
+   --space-md: 1rem;
+   --space-lg: 1.5rem;
+   --space-xl: 2rem;
+   --space-2xl: 3rem;
+   --space-3xl: 4.5rem;
+
+   /* ==========================================================================
        4. Border Radii, Shadows, & Z-index
        ========================================================================== */
- 
-    --radius-sm: 4px;
-    --radius-md: 8px;
-    --radius-lg: 16px;
-    --radius-full: 9999px;
- 
-    --shadow-sm: 0 1px 3px rgba(12, 18, 38, 0.08);
-    --shadow-md: 0 4px 6px -1px rgba(12, 18, 38, 0.08), 0 2px 4px -1px rgba(12, 18, 38, 0.04);
-    --shadow-lg: 0 10px 15px -3px rgba(12, 18, 38, 0.08), 0 4px 6px -2px rgba(12, 18, 38, 0.04);
-    --shadow-sticky: 0 4px 20px rgba(12, 18, 38, 0.04);
- 
-    --z-back: -10;
-    --z-normal: 1;
-    --z-dropdown: 100;
-    --z-sticky: 1000;
-    --z-modal: 2000;
- 
-    /* ==========================================================================
+
+   --radius-sm: 4px;
+   --radius-md: 8px;
+   --radius-lg: 16px;
+   --radius-full: 9999px;
+
+   --shadow-sm: 0 1px 3px rgba(12, 18, 38, 0.08);
+   --shadow-md: 0 4px 6px -1px rgba(12, 18, 38, 0.08), 0 2px 4px -1px rgba(12, 18, 38, 0.04);
+   --shadow-lg: 0 10px 15px -3px rgba(12, 18, 38, 0.08), 0 4px 6px -2px rgba(12, 18, 38, 0.04);
+   --shadow-sticky: 0 4px 20px rgba(12, 18, 38, 0.04);
+
+   --z-back: -10;
+   --z-normal: 1;
+   --z-dropdown: 100;
+   --z-sticky: 1000;
+   --z-modal: 2000;
+
+   /* ==========================================================================
        5. Motion & Transitions
        ========================================================================== */
- 
-    --transition-fast: 0.15s ease;
-    --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
- 
-    /* ==========================================================================
-       6. Container Widths
-       ========================================================================== */
- 
-    --container-sm: 640px;
-    --container-md: 768px;
-    --container-lg: 1024px;
-    --container-xl: 1200px;
+
+   --transition-fast: 0.15s ease;
+   --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+   --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+   /* ==========================================================================
+   6. Container Widths
+   ========================================================================== */
+
+--container-sm: 640px;
+--container-md: 768px;
+--container-lg: 1024px;
+--container-xl: 1200px;
+
+} /* End :root */
+
+/* ==========================================================================
+   Dark Theme Overrides
+   ========================================================================== */
+
+[data-theme="dark"] {
+    --clr-bg: hsl(224, 30%, 10%);
+    --clr-surface: hsl(224, 24%, 14%);
+
+    --clr-text-primary: hsl(0, 0%, 98%);
+    --clr-text-body: hsl(220, 15%, 85%);
+    --clr-text-muted: hsl(220, 10%, 65%);
+
+    --clr-border: hsl(224, 20%, 24%);
+
+    --clr-primary-light: hsl(224, 50%, 18%);
+    --clr-accent-light: hsl(150, 40%, 18%);
 }

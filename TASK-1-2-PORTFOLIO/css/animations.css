@@ -56,14 +56,9 @@
  
 .hero-content {
     animation: slideUp var(--transition-slow) both;
-    /* Hint compositor ONLY for this targeted hero element */
-    will-change: transform, opacity;
 }
  
 /* Remove will-change after animation completes to free GPU memory */
-.hero-content.animation-done {
-    will-change: auto;
-}
  
 /*
     Card & timeline transitions: transform and box-shadow transitions.
