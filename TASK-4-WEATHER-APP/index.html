@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TASK-4: Advanced Weather Dashboard - Real-time global atmospheric forecast, dynamic themes, keyboard navigation, and historical search cache.">
+    <title>Skyline Weather Dashboard</title>
+    <!-- Core Cascading Styles -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Unpkg CDN for Lucide Icons - Ensures 100% Client-Side Independence without Bundle Overlap -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="theme-clear">
+    <!-- Screen Reader Announcement Region for WCAG 2.1 AA Compliance -->
+    <div id="aria-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Skip Navigation Link -->
+    <a href="#main-dashboard" class="skip-link">Skip to main dashboard content</a>
+
+    <div class="app-container">
+        <!-- Dashboard Top Navigation & Brand Header -->
+        <header class="app-header">
+            <div class="brand">
+                <i data-lucide="cloud-sun" class="brand-icon" aria-hidden="true"></i>
+                <div>
+                    <h1>Skyline Weather</h1>
+                    <p class="brand-subtitle">REST Integration Portal</p>
+                </div>
+            </div>
+
+            <!-- Modern Fluid Live Clock Widget -->
+            <div class="live-clock" id="clock-widget" aria-label="Current local system clock">
+                <i data-lucide="clock" class="clock-icon" aria-hidden="true"></i>
+                <div class="clock-time-group">
+                    <span class="day-label" id="live-day">--</span>
+                    <span class="date-label" id="live-date">--</span>
+                    <time class="time-label font-mono" id="live-time">--:--:--</time>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Workspace Grid -->
+        <main class="dashboard-main" id="main-dashboard">
+            <!-- Left Side Control Panel: Search & History -->
+            <section class="control-panel" aria-label="Search controls and recent history">
+                <div class="glass-card search-box">
+                    <h2 class="card-title">
+                        <i data-lucide="search" class="title-icon" aria-hidden="true"></i>
+                        <span>Location Query</span>
+                    </h2>
+
+                    <!-- Search Input Form -->
+                    <form id="search-form" class="search-form" novalidate>
+                        <div class="search-group">
+                            <label for="city-input" class="sr-only">Query City Name</label>
+                            <input 
+                                type="text" 
+                                id="city-input" 
+                                class="search-input" 
+                                placeholder="E.g., Mumbai, New York, Tokyo..." 
+                                autocomplete="off"
+                                required
+                            >
+                            <button type="submit" class="search-btn" aria-label="Query weather conditions">
+                                <i data-lucide="arrow-right" class="btn-icon" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <!-- Client-Side Form Validation Notice msg -->
+                        <div id="form-validation-feedback" class="validation-feedback hidden" role="alert"></div>
+                    </form>
+
+                    <!-- Persistent Search History -->
+                    <div class="history-section" id="history-section">
+                        <div class="history-header">
+                            <h3>Search Cache</h3>
+                            <button id="clear-cache-btn" class="clear-btn" aria-label="Empty search cache">
+                                <i data-lucide="trash-2" class="clear-btn-icon" aria-hidden="true"></i>
+                                <span>Clear Cache</span>
+                            </button>
+                        </div>
+                        <ul class="history-list" id="history-container" role="list" aria-label="Recent cities list">
+                            <!-- Dynamic history buttons inserted here -->
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Side Workspace: Weather Stats and Dynamic Card Panels -->
+            <section class="weather-display" aria-label="Current meteorological conditions" id="weather-display-section" aria-busy="false">
+                
+                <!-- 1. SKELETON LOADER PANEL -->
+                <div id="skeleton-loader" class="skeleton-wrapper hidden" aria-hidden="true">
+                    <div class="glass-card skeleton-card skeleton-hero">
+                        <div class="shimmer-circle animate-pulse"></div>
+                        <div class="shimmer-lines">
+                            <div class="shimmer-line line-lg animate-pulse"></div>
+                            <div class="shimmer-line line-md animate-pulse"></div>
+                        </div>
+                    </div>
+                    <div class="skeleton-grid">
+                        <div class="glass-card skeleton-card animate-pulse"></div>
+                        <div class="glass-card skeleton-card animate-pulse"></div>
+                        <div class="glass-card skeleton-card animate-pulse"></div>
+                        <div class="glass-card skeleton-card animate-pulse"></div>
+                        <div class="glass-card skeleton-card animate-pulse"></div>
+                        <div class="glass-card skeleton-card animate-pulse"></div>
+                    </div>
+                </div>
+
+                <!-- 2. LIVE CHANNELS ERROR WRAPPER -->
+                <div id="error-card" class="glass-card error-wrapper hidden" role="alert">
+                    <i data-lucide="alert-triangle" class="error-icon" aria-hidden="true"></i>
+                    <div class="error-content">
+                        <h3 id="error-headline">Atmospheric Query Aborted</h3>
+                        <p id="error-message">Network request aborted. Please verify details and retry.</p>
+                        <button id="retry-default-btn" class="retry-btn">
+                            <i data-lucide="refresh-cw" class="retry-icon" aria-hidden="true"></i>
+                            <span>Search Mumbai</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 3. ACTUAL LOADED STATS (GLASSMORPHIC LAYOUT) -->
+                <div id="weather-stats-content" class="weather-content animate-fade-in">
+                    <!-- High-Contrast Hero Card -->
+                    <article class="glass-card element-hero-card">
+                        <div class="hero-top">
+                            <div class="geo-meta">
+                                <i data-lucide="map-pin" class="pin-icon" aria-hidden="true"></i>
+                                <h2 class="region-label">
+                                    <span id="txt-city">MUMBAI</span>, 
+                                    <span id="txt-country" class="accent-text">IN</span>
+                                </h2>
+                            </div>
+                            <div class="status-indicator">
+                                <span class="indicator-dot animate-ping"></span>
+                                <span class="indicator-label" id="txt-last-updated">UPDATED LIVE</span>
+                            </div>
+                        </div>
+
+                        <div class="hero-body">
+                            <div class="primary-visual">
+                                <div class="icon-backdrop">
+                                    <i data-lucide="sun" id="weather-main-icon" class="hero-weather-icon" aria-hidden="true"></i>
+                                </div>
+                                <div class="temperature-gauge">
+                                    <span id="txt-temp" class="temp-val">--</span>
+                                    <span class="temp-unit" aria-hidden="true">&deg;C</span>
+                                    <span class="sr-only">Celsius</span>
+                                </div>
+                            </div>
+
+                            <div class="condition-meta">
+                                <h3 class="condition-title" id="txt-condition">Sunny</h3>
+                                <p class="condition-description" id="txt-desc">clear sky condition</p>
+                                <div class="feels-like-container">
+                                    <span>Feels Like: </span>
+                                    <strong class="font-mono"><span id="txt-feels-like">--</span>&deg;C</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Meteorological Grid Panel -->
+                    <div class="metrics-grid">
+                        <!-- Card 1: Humidity -->
+                        <section class="glass-card metric-card" aria-labelledby="title-humidity">
+                            <div class="metric-header">
+                                <i data-lucide="droplets" class="metric-icon val-humidity" aria-hidden="true"></i>
+                                <h4 id="title-humidity">Humidity</h4>
+                            </div>
+                            <div class="metric-display">
+                                <span id="txt-humidity" class="metric-value font-mono">--</span>
+                                <span class="metric-unit">%</span>
+                            </div>
+                            <p class="metric-summary" id="summary-humidity">Loading data representation</p>
+                        </section>
+
+                        <!-- Card 2: Wind Speed -->
+                        <section class="glass-card metric-card" aria-labelledby="title-wind">
+                            <div class="metric-header">
+                                <i data-lucide="wind" class="metric-icon val-wind" aria-hidden="true"></i>
+                                <h4 id="title-wind">Wind Speed</h4>
+                            </div>
+                            <div class="metric-display">
+                                <span id="txt-wind" class="metric-value font-mono">--</span>
+                                <span class="metric-unit">m/s</span>
+                            </div>
+                            <p class="metric-summary" id="summary-wind">Loading data representation</p>
+                        </section>
+
+                        <!-- Card 3: Atmospheric Pressure -->
+                        <section class="glass-card metric-card" aria-labelledby="title-pressure">
+                            <div class="metric-header">
+                                <i data-lucide="compass" class="metric-icon val-pressure" aria-hidden="true"></i>
+                                <h4 id="title-pressure">Pressure</h4>
+                            </div>
+                            <div class="metric-display">
+                                <span id="txt-pressure" class="metric-value font-mono">--</span>
+                                <span class="metric-unit">hPa</span>
+                            </div>
+                            <p class="metric-summary" id="summary-pressure">Standard air-force indicators</p>
+                        </section>
+
+                        <!-- Card 4: Visibility -->
+                        <section class="glass-card metric-card" aria-labelledby="title-visibility">
+                            <div class="metric-header">
+                                <i data-lucide="eye" class="metric-icon val-visibility" aria-hidden="true"></i>
+                                <h4 id="title-visibility">Visibility</h4>
+                            </div>
+                            <div class="metric-display">
+                                <span id="txt-visibility" class="metric-value font-mono">--</span>
+                                <span class="metric-unit">km</span>
+                            </div>
+                            <p class="metric-summary" id="summary-visibility">Loading data representation</p>
+                        </section>
+
+                        <!-- Card 5: Sunrise -->
+                        <section class="glass-card metric-card" aria-labelledby="title-sunrise">
+                            <div class="metric-header">
+                                <i data-lucide="sunrise" class="metric-icon val-sunrise" aria-hidden="true"></i>
+                                <h4 id="title-sunrise">Sunrise</h4>
+                            </div>
+                            <div class="metric-display">
+                                <span id="txt-sunrise" class="metric-value font-mono">--:--</span>
+                            </div>
+                            <p class="metric-summary" id="summary-sunrise">Local morning solar entry</p>
+                        </section>
+
+                        <!-- Card 6: Sunset -->
+                        <section class="glass-card metric-card" aria-labelledby="title-sunset">
+                            <div class="metric-header">
+                                <i data-lucide="sunset" class="metric-icon val-sunset" aria-hidden="true"></i>
+                                <h4 id="title-sunset">Sunset</h4>
+                            </div>
+                            <div class="metric-display">
+                                <span id="txt-sunset" class="metric-value font-mono">--:--</span>
+                            </div>
+                            <p class="metric-summary" id="summary-sunset">Local evening twilight transition</p>
+                        </section>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Professional Humble App Footer (No slop logs or telemetry indicators) -->
+        <footer class="app-footer">
+            <div class="footer-details">
+                <p>&copy; 2026 Skyline Weather. Built for the Senior Internship Evaluation Portfolio.</p>
+                <div class="portfolio-links">
+                    <span class="author-tag">Candidate: <strong>Siddesh Mange</strong></span>
+                    <a href="https://github.com/siddesh3448" target="_blank" rel="noopener noreferrer" class="portfolio-link" aria-label="Siddesh Mange's GitHub Portfolio">
+                        <i data-lucide="github" aria-hidden="true"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/siddesh-mange/" target="_blank" rel="noopener noreferrer" class="portfolio-link" aria-label="Siddesh Mange's LinkedIn Profile">
+                        <i data-lucide="linkedin" aria-hidden="true"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Core Dynamic Functional Script -->
+    <script type="module" src="./js/app.js"></script>
+</body>
+</html>
