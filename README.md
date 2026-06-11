@@ -71,8 +71,8 @@ This repository represents clean and structured usage of core web technologies. 
 | **01** | **Accessible Portfolio Website** | HTML5, CSS3, Keyframes, ARIA Metadata | `✅ COMPLETED` | A clean, semantic, and high-contrast developer hub audited for screen readers. |
 | **02** | **Advanced CSS Layouts** | CSS Grid, Flexbox, Variable Tokens, Fluid Units | `✅ COMPLETED` | A modern layout designed to seamlessly adapt across viewports from 320px up to 2560px. |
 | **03** | **Interactive Todo Application** | JavaScript, DOM Event Model, LocalStorage API | `🔄 IN PROGRESS` | Functional task manager with dynamic search, active status filters, and persistence. |
-| **04** | **Weather Application** | — | `⏳ PENDING` | Dynamic dashboard integrating live remote weather parameters. |
-| **05** | **Capstone Project** | — | `⏳ PENDING` | Final advanced capstone assignment summarizing the internship milestone criteria. |
+| **04** | **Weather Application** | HTML5, CSS3, JavaScript, Weather API | `✅ COMPLETED` | Dynamic dashboard integrating live remote weather parameters. |
+| **05** | **Capstone Project** | HTML5, CSS3, JavaScript | `✅ COMPLETED` | Final advanced capstone assignment summarizing the internship milestone criteria. |
 
 ---
 
